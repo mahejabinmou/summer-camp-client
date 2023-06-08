@@ -1,27 +1,35 @@
-import { FaShoppingCart } from "react-icons/fa";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 
 const Navbar = () => {
+    const {user,logOut}=useContext(AuthContext);
+    const handleLogOut=()=>{
+      logOut()
+      .then(()=>{
+
+      })
+      .catch(error=>console.log(error));
+    }
     const navOptions = <>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/instructors">Instructors</Link></li>
+        <li><Link to="/allclasses">Classes</Link></li>
+       
+        {
+            user? <>
+            {/* <span>{user?.displayName}</span> */}
+            <span><img className='w-[50px] h-[50px] mx-6 rounded-[50%]' src={user.photoURL} alt="" /> </span>
+            <button  onClick={handleLogOut} className="btn btn-active btn-ghost">LogOut</button>
+            </> 
+            :
+            <><li><Link to="/login">Login</Link></li></>
+        }
+        
 
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/menu">Instructors</Link></li>
-    <li><Link to="/order/salad">Classes</Link></li>
-    {/* <li><Link to="/order/salad">Dashboard </Link></li> */}
-    <li><Link to="/order/salad">User profile picture</Link></li>
-    {/* <li>
-        <Link to="/dashboard/mycart">
-            <button className="btn gap-2">
-               <FaShoppingCart></FaShoppingCart>
-                <div className="badge badge-secondary"></div>
-            </button>
-        </Link>
-    </li> */}
 
-    
-    
-</>
+    </>
     return (
         <>
             <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">

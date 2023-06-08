@@ -1,0 +1,84 @@
+[
+    {
+        "_id": "642c155b2c4774f05c36eeaa",
+        "name": "Guiter",
+        "instructor name": "Professor Charlie",
+        "image": "https://i.ibb.co/rsdSQrP/gitter1.jpg",
+        "available_seats":"20",
+        "price": 14
+    },
+    {
+        "_id": "642c155b2c4774f05c36eeb9",
+        "name": "Drums",
+        "instructor name": "Professor Pitar",
+        "image": "https://i.ibb.co/18nrG8x/gitter2.jpg",
+        "available_seats":"30",
+        "price": 20
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee7c",
+        "name": "Violine",
+        "instructor name": "Professor John",
+        "image": "https://i.ibb.co/zZjpXXb/violine.jpg",
+        "available_seats":"40",
+        "price": 30
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee88",
+        "name": "Piano",
+        "instructor name": "Professor Anne",
+        "image": "https://i.ibb.co/QcqMPKy/piano.jpg",
+        "available_seats":"80",
+        "price": 150
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee7a",
+        "name": "Vocals",
+        "instructor name": "Professor Bela",
+        "image": "https://i.ibb.co/2Yfht4Z/vocals.jpg",
+        "available_seats":"90",
+        "price": 120
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee8c",
+        "name": "Ukulele",
+        "instructor name": "Professor Bela",
+        "image": "https://i.ibb.co/Z6WCyfk/ukulele.jpg",
+        "available_seats":"10",
+        "price": 85
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee94",
+        "name": "Flute",
+        "instructor name": "Professor Cathren",
+        "image": "https://i.ibb.co/1GcwFT5/flute.jpg",
+        "available_seats":"15",
+        "price": 75
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee9e",
+        "name": "Flute",
+        "instructor name": "Professor Cathren",
+        "image": "https://i.ibb.co/1GcwFT5/flute.jpg",
+        "available_seats":"18",
+        "price": 90
+    },
+    {
+        "_id": "642c155b2c4774f05c36eea6",
+        "name": "Tabla",
+        "instructor name": "Professor Cathren",
+        "image": "https://i.ibb.co/JvN7jg0/tobla.jpg",
+        "available_seats":"28",
+        "price": 60
+    },
+    
+    {
+        "_id": "642c155b2c4774f05c36eeaf",
+        "name": "Harmonium",
+        "instructor name": "Professor Cathren",
+        "image": "https://i.ibb.co/PNm8ckv/harmonium.jpg",
+        "available_seats":"98",
+        "price": 200
+    }
+    
+]
