@@ -56,8 +56,13 @@ const Login = () => {
             <span className="label-text">Password</span>
           </label>
           <input type={showPass? "text" : "password"} name="password" placeholder="password" className="input input-bordered w-full" />
+          <p className="absolute top-[54px] right-[15px]"
+          onClick={()=>setShowPass(!showPass)}
+           >
+            <small>{showPass? <FaEye/>: <FaEyeSlash/>}</small>
+
+          </p>
           
-          {/* paragraph */}
         </div>
         <div className="form-control mt-6">
           <input className="btn btn-primary" type="submit" value='Login' />
