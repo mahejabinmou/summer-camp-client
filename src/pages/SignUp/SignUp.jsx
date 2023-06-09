@@ -5,22 +5,15 @@ import { useContext, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom/dist";
 import Swal from "sweetalert2";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } =
         useForm();
-    // const [showPass, setShowPass] = useState(false);
+    const [showPass, setShowPass] = useState(false);
 
-    // const onConfirm = (data) => {
-    //     const password = data.password;
-    //     const confirm = data.confirm;
-    //     if (password !== confirm) {
-    //         alert("confirm password not match");
-    //         return;
-    //     }
-    //     console.log(data);
-    // }
+
 
 
 
@@ -28,6 +21,15 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const onSubmit = data => {
+        // const onConfirm = (data) => {
+        const password = data.password;
+        const confirm = data.confirm;
+        if (password !== confirm) {
+            alert("confirm password not match");
+            return;
+        }
+        console.log(data);
+        // }
 
         createUser(data.email, data.password)
             .then(result => {
@@ -100,17 +102,23 @@ const SignUp = () => {
                             {errors.email && <span className="text-red-600">Email  is required</span>}
 
                         </div>
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" {...register("password", {
+                            <input type={showPass ? "text" : "password"}  {...register("password", {
                                 required: true,
                                 minLength: 6,
                                 maxLength: 20,
                                 pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/
                             })}
                                 placeholder="password" className="input input-bordered" />
+                            <p className="absolute top-[54px] right-[15px]"
+                                onClick={() => setShowPass(!showPass)}
+                            >
+                                <small>{showPass ? <FaEye /> : <FaEyeSlash />}</small>
+
+                            </p>
                             {errors.password?.type === 'required' && <p className="text-red-600">Password required</p>}
 
                             {errors.password?.type === 'minLength' && <p className="text-red-600">Password minimum 6 required</p>}
@@ -120,7 +128,7 @@ const SignUp = () => {
                             {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one uppercase,one number and one special character</p>}
                         </div>
 
-                        {/* <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Confirm Password</span>
                             </label>
@@ -131,9 +139,16 @@ const SignUp = () => {
                                 placeholder="confirm password" className="input input-bordered"
                             />
 
+                            <p className="absolute top-[54px] right-[15px]"
+                                onClick={() => setShowPass(!showPass)}
+                            >
+                                <small>{showPass ? <FaEye /> : <FaEyeSlash />}</small>
+
+                            </p>
+
                             {errors.confirm && (<span className="text-red-600">You need to re-type password</span>)}
 
-                        </div> */}
+                        </div>
 
 
 
