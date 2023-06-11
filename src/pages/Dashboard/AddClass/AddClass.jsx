@@ -18,7 +18,7 @@ const AddClass = () => {
 
                     const imgURL = imgResponse.data.display_url;
                     const { name, seats, price, email, instructor } = data;
-                    const newClass = { name, seats, role: 'pending', price: parseFloat(price), email, instructor, image: imgURL }
+                    const newClass = { name, seats,enroll:0, role: 'pending', price: parseFloat(price), email, instructor, image: imgURL }
                     console.log(newClass);
                     fetch('https://summer-camp-server-side-mahejabinmou.vercel.app/classes', {
                         method: 'POST',

@@ -4,8 +4,7 @@ import Swal from "sweetalert2";
 
 const ClassItem = ({ item }) => {
   
-
-  const { image, name, email, instructor, role, price, available_seats } = item;
+const { image, name, email, instructor, role, price, available_seats } = item;
   console.log(image);
 
   const { data: classes = [], refetch } = useQuery(['classes'], async () => {
@@ -74,10 +73,13 @@ const ClassItem = ({ item }) => {
       })
   }
 
-
+console.log(classes);
   
 
   return (
+
+     
+    
     <div>
       {
          classes.map((user) => 
@@ -91,32 +93,28 @@ const ClassItem = ({ item }) => {
               <p>Available Seats: {available_seats}</p>
               <p>Price: {price}</p>
               
-              <>{user.role == 'pending' ? 'pending' :
+                 <>{user.role == 'pending' ? 'Pending' :
                   <button className="bg-green-300 rounded" onClick={() => handlePending(user)}>pending</button>
                 }</>
 
-                <>{user.role == 'approved' ? 'approved' :
+                <>{user.role == 'approved' ? 'Approved' :
                   <button className="bg-green-300 rounded" onClick={() => handleAproved(user)}>approved</button>
                 }</>
 
-                <>{user.role == 'denied' ? 'denied' :
-                  <button className="bg-green-300 rounded" onClick={() => handleDeny(user)}>denied</button>
+                <>{user.role == 'denied ' ? 'Denied' :
+                  <><button className="bg-green-300 rounded" onClick={() => handleDeny(user)}>denied</button>
+                  <button disabled className="btn btn-success">Send Feedback</button>
+                  </>
                 }</>
-
-
-
-
-             
-              <button className="btn btn-success">Feedback</button>
+              <button disabled className="btn btn-success">Send Feedback</button>
             </div>
           </div>
         </div>
 
         )
-
-
-      }
+   }
     </div>
+
   );
 };
 

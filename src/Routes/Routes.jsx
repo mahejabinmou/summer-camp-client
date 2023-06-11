@@ -15,6 +15,7 @@ import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
+import SendFeedBack from "../pages/Dashboard/SendFeedBack/SendFeedBack";
 
 
 
@@ -75,6 +76,10 @@ import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
             {
                 path:'manageUsers',
                 element:<ManageUsers></ManageUsers>
+            },
+            {
+              path:'sendfeedback',
+              element:<SendFeedBack></SendFeedBack>
             }
             ]
           },

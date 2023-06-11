@@ -8,7 +8,7 @@ const ManageClasses = () => {
     console.log(classes);
 
      useEffect(()=>{
-          fetch('https://summer-camp-server-side-mahejabinmou.vercel.app/classes')
+          fetch('https://summer-camp-server-side-three.vercel.app/classes')
           .then(res=>res.json())
           .then(data=>setClasses(data))
     },[])
