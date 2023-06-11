@@ -1,8 +1,8 @@
-import { Helmet } from "react-helmet";
+
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useContext, useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom/dist";
+import { Link, useNavigate } from "react-router-dom/dist";
 import Swal from "sweetalert2";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -38,7 +38,7 @@ const SignUp = () => {
 
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = { name: data.name, email: data.email }
+                        const saveUser = { name: data.name, email: data.email,role:'user' };
 
                         fetch(`http://localhost:4000/users`, {
                             method: 'POST',
@@ -72,11 +72,11 @@ const SignUp = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
-            <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">SignUp now!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <div className="text-center md:w-1/2 ">
+                    <img className="w-[500px]" src="https://i.ibb.co/rZkBdjK/sign.jpg" alt="" />
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card p-2 flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <h1 className="text-2xl text-center  font-bold">SignUp now!</h1>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -158,7 +158,7 @@ const SignUp = () => {
 
                         </div>
                     </form>
-                    <p><small>Already have an account? <Link to="/login">Login</Link></small></p>
+                    <p className="text-center"><small>Already have an account? <Link to="/login">Login</Link></small></p>
                     <SocialLogin></SocialLogin>
 
                 </div>

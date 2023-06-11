@@ -25,7 +25,7 @@ const Login = () => {
             const user= result.user;
             const loggedInUser={email:user.email}
             console.log(loggedInUser);
-            fetch(`http://localhost:4000/jwt`,{
+            fetch(`https://summer-camp-server-side-gold.vercel.app/jwt`,{
                 method:'POST',
                 headers:{
                     'content-type':'application/json'
@@ -49,10 +49,10 @@ const Login = () => {
         <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col md:flex-row">
     <div className="text-center md:w-1/2 lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-    </div>
-    <div className="card  md:w-1/2 max-w-sm shadow-2xl bg-base-100">
+      <img className="w-[800px]" src="https://i.ibb.co/6y2vPRT/login.jpg" alt="" />
+       </div>
+    <div className="card text-center md:w-1/2 max-w-sm shadow-2xl bg-base-100">
+    <h1 className="text-3xl p-2 font-bold">Login now!</h1>
       <form onSubmit={handleLogin}  className="card-body">
         <div className="form-control">
           <label className="label">

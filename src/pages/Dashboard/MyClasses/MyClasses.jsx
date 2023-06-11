@@ -34,7 +34,7 @@ export default MyClasses;
 //     console.log(classes);
 
 //      useEffect(()=>{
-//           fetch('http://localhost:4000/classes')
+//           fetch('https://summer-camp-server-side-gold.vercel.app/classes')
 //           .then(res=>res.json())
 //           .then(data=>setClasses(data))
 //     },[])

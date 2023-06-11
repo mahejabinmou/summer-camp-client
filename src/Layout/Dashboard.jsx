@@ -6,7 +6,8 @@ import { MdBorderColor, MdHome, MdManageAccounts, MdManageHistory } from 'react-
 const Dashboard = () => {
 
     // TODO: load data from the server to have dynamic isAdmin
-    const isAdmin = true;
+    const isAdmin=true;
+    // const isInstructor=false;
     return (
         <div className="drawer lg:drawer-open ">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
