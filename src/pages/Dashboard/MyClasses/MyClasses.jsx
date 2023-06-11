@@ -1,21 +1,18 @@
+import { useEffect, useState } from "react";
 
 
 const MyClasses = () => {
+    const [classes,setClasses]=useState([]);
+    console.log(classes);
+
+     useEffect(()=>{
+          fetch('https://summer-camp-server-side-mahejabinmou.vercel.app/classes')
+          .then(res=>res.json())
+          .then(data=>setClasses(data))
+    },[])
     return (
-        <div className="overflow-x-auto">
-  <table className="table table-zebra">
-    {/* head */}
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        <div className="overflow-x-auto">
+        
+      
         <table className="table table-zebra">
           {/* head */}
           <thead>
@@ -23,27 +20,28 @@ const MyClasses = () => {
               <th>#</th>
               <th>Total Enrolled Students</th>
               <th>Status</th>
-              <th>Update button.</th>
               <th>Feedback </th>
+              <th>Update</th>
             </tr>
           </thead>
           <tbody>
             
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
+           
+              {
+                classes.map(user=><tr key={user._id}>
+                   <th>{user.name}</th>
+                                <th>{user.enrol}</th>
+                                <td>{user.role}</td>
+                                <td>feedback</td>
+                                <td><button>update</button></td> 
+
+                </tr>)
+              }
             
             
           </tbody>
         </table>
-      </div>
-      }
-    </tbody>
-  </table>
-</div>
+      
     );
 };
 

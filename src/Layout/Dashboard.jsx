@@ -11,19 +11,18 @@ const Dashboard = () => {
 
 
 
-    
+
     return (
-        <div className="drawer lg:drawer-open ">
+        <div className="drawer md:drawer-open ">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
-
-                <Outlet></Outlet>
-                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-
+            <Outlet></Outlet>
+        <label htmlFor="my-drawer-2" className="btn bg-[#40e698] drawer-button md:hidden">Open drawer</label>
+        
             </div>
             <div className="drawer-side bg-[#40e698]">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 h-full  text-white">
+                <ul className="menu p-2 w-50 h-full  text-white">
 
                     {/* {
                         isAdmin ?

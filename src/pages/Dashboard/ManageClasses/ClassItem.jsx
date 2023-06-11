@@ -1,121 +1,173 @@
-import { useQuery } from "@tanstack/react-query";
-import Swal from "sweetalert2";
+// import { useQuery } from "@tanstack/react-query";
+// import Swal from "sweetalert2";
 
 
-const ClassItem = ({ item }) => {
+// const ClassItem = ({ item }) => {
   
-const { image, name, email, instructor, role, price, available_seats } = item;
-  console.log(image);
+// const { image, name, email, instructor, role, price, available_seats } = item;
+//   console.log(image);
 
-  const { data: classes = [], refetch } = useQuery(['classes'], async () => {
+//   const { data: classes = [], refetch } = useQuery(['classes'], async () => {
 
-    const res = await fetch('https://summer-camp-server-side-mahejabinmou.vercel.app/classes')
-    return res.json();
-  })
+//     const res = await fetch('https://summer-camp-server-side-mahejabinmou.vercel.app/classes')
+//     return res.json();
+//   })
 
 
-  const handlePending = (user) => {
-    fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/pending/${user._id}`, {
-      method: 'PATCH',
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        if (data.modifiedCount) {
-          refetch();
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: `${user.name} is pending !`,
-            showConfirmButton: false,
-            timer: 1500
-          })
-        }
-      })
-  }
+//   const handlePending = (user) => {
+//     fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/pending/${user._id}`, {
+//       method: 'PATCH',
+//     })
+//       .then(res => res.json())
+//       .then(data => {
+//         console.log(data)
+//         if (data.modifiedCount) {
+//           refetch();
+//           Swal.fire({
+//             position: 'top-end',
+//             icon: 'success',
+//             title: `${user.name} is pending !`,
+//             showConfirmButton: false,
+//             timer: 1500
+//           })
+//         }
+//       })
+//   }
 
-  const handleAproved = (user) => {
-    fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/approved/${user._id}`, {
-      method: 'PATCH',
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        if (data.modifiedCount) {
-          refetch();
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: `${user.name} is Aproved !`,
-            showConfirmButton: false,
-            timer: 1500
-          })
-        }
-      })
-  }
-  const handleDeny = (user) => {
-    fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/denied/${user._id}`, {
-      method: 'PATCH',
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        if (data.modifiedCount) {
-          refetch();
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: `${user.name} is Denied !`,
-            showConfirmButton: false,
-            timer: 1500
-          })
-        }
-      })
-  }
+//   const handleAproved = (user) => {
+//     fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/approved/${user._id}`, {
+//       method: 'PATCH',
+//     })
+//       .then(res => res.json())
+//       .then(data => {
+//         console.log(data)
+//         if (data.modifiedCount) {
+//           refetch();
+//           Swal.fire({
+//             position: 'top-end',
+//             icon: 'success',
+//             title: `${user.name} is Aproved !`,
+//             showConfirmButton: false,
+//             timer: 1500
+//           })
+//         }
+//       })
+//   }
+//   const handleDeny = (user) => {
+//     fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/denied/${user._id}`, {
+//       method: 'PATCH',
+//     })
+//       .then(res => res.json())
+//       .then(data => {
+//         console.log(data)
+//         if (data.modifiedCount) {
+//           refetch();
+//           Swal.fire({
+//             position: 'top-end',
+//             icon: 'success',
+//             title: `${user.name} is Denied !`,
+//             showConfirmButton: false,
+//             timer: 1500
+//           })
+//         }
+//       })
+//   }
 
-console.log(classes);
+// console.log(classes);
   
 
-  return (
+//   return (
+                  
+//           <table className="table table-zebra">
+//             {/* head */}
+//             <thead>
+//               <tr>
+//                 <th>#</th>
+                
+//                 <th>Class Name:</th>
+//                 <th>Instructor Name:</th>
+//                 <th>Instructor Email:</th>
+//                 <th>Feedback </th>
+//                 <th>Available Seats</th>
+//                 <th>Price</th>
+//               </tr>
+//             </thead>
+//             <tbody>
+//               {
+//           classes.map((user) => <tr key={user._id} >
 
+//                                   <th><img src={image} alt="" /></th>
+//                                   <th>{name}</th>
+//                                 <th>{instructor}</th>
+//                                 <td>{email}</td>
+//                                 <td>{available_seats}</td>
+//                                 <td>{price}</td>
+
+//                <td>{user.role == 'pending' ? 'Pending' :
+//                   // <button className="bg-green-300 rounded" onClick={() => handlePending(user)}>pending</button>
+//                   ''
+//                  }</td>
+
+                                
+//                                 <td>{user.role == 'approved' ? 'Approved' :
+//      <button className="bg-green-300 rounded" onClick={() => handleAproved(user)}>approved</button>
+//               }</td>
+
+//               <td>{user.role == 'denied ' ? 'Denied' :
+//                  <button className="bg-green-300 rounded" onClick={() => handleDeny(user)}>denied</button>
+
+//              } </td>
+
+//                             </tr>)
+//                         }
+              
+              
+//             </tbody>
+//           </table>
+        
+        
+      
+ 
+
+    
      
     
-    <div>
-      {
-         classes.map((user) => 
-         <div key={user._id}>
-          <div className="card card-compact w-80  bg-base-100 shadow-xl">
-            <div className="w-[150px] h-[150px] mx-auto "><img src={image} /></div>
-            <div className="card-body">
-              <h3 className="card-title">Class Name: {name}</h3>
-              <h2>Instructor Name: {instructor}</h2>
-              <p>Instructor Email: {email}</p>
-              <p>Available Seats: {available_seats}</p>
-              <p>Price: {price}</p>
+//   //   <div>
+//   //     {
+//   //        classes.map((user) => 
+//   //        <div key={user._id}>
+//   //         <div className="card card-compact w-80  bg-base-100 shadow-xl">
+//   //           <div className="w-[150px] h-[150px] mx-auto "><img src={image} /></div>
+//   //           <div className="card-body">
+//   //             <h3 className="card-title">Class Name: {name}</h3>
+//   //             <h2>Instructor Name: {instructor}</h2>
+//   //             <p>Instructor Email: {email}</p>
+//   //             <p>Available Seats: {available_seats}</p>
+//   //             <p>Price: {price}</p>
               
-                 <>{user.role == 'pending' ? 'Pending' :
-                  <button className="bg-green-300 rounded" onClick={() => handlePending(user)}>pending</button>
-                }</>
+//   //                <>{user.role == 'pending' ? 'Pending' :
+//   //                 <button className="bg-green-300 rounded" onClick={() => handlePending(user)}>pending</button>
+//   //               }</>
 
-                <>{user.role == 'approved' ? 'Approved' :
-                  <button className="bg-green-300 rounded" onClick={() => handleAproved(user)}>approved</button>
-                }</>
+//   //               <>{user.role == 'approved' ? 'Approved' :
+//   //                 <button className="bg-green-300 rounded" onClick={() => handleAproved(user)}>approved</button>
+//   //               }</>
 
-                <>{user.role == 'denied ' ? 'Denied' :
-                  <><button className="bg-green-300 rounded" onClick={() => handleDeny(user)}>denied</button>
-                  <button disabled className="btn btn-success">Send Feedback</button>
-                  </>
-                }</>
-              <button disabled className="btn btn-success">Send Feedback</button>
-            </div>
-          </div>
-        </div>
+//   //               <>{user.role == 'denied ' ? 'Denied' :
+//   //                 <button className="bg-green-300 rounded" onClick={() => handleDeny(user)}>denied</button>
+//   //                 
+//   //                 
+//   //               }</>
+//   //             <button disabled className="btn btn-success">Send Feedback</button>
+//   //           </div>
+//   //         </div>
+//   //       </div>
 
-        )
-   }
-    </div>
+//   //       )
+//   //  }
+//   //   </div>
 
-  );
-};
+//   );
+// };
 
-export default ClassItem;
+// export default ClassItem;

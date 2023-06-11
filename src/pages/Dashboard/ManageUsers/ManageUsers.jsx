@@ -6,12 +6,12 @@ const ManageUsers = () => {
     
     const { data: users = [], refetch } = useQuery(['users'], async () => {
 
-        const res = await fetch('https://summer-camp-server-side-three.vercel.app/users')
+        const res = await fetch('http://localhost:4000/users')
         return res.json();
     })
 
     const handleMakeAdmin = (user) => {
-        fetch(`https://summer-camp-server-side-three.vercel.app/users/admin/${user._id}`, {
+        fetch(`http://localhost:4000/users/admin/${user._id}`, {
             method: 'PATCH',
         })
             .then(res => res.json())
@@ -31,7 +31,7 @@ const ManageUsers = () => {
     }
 
     const handleMakeinstructor = (user) => {
-        fetch(`https://summer-camp-server-side-three.vercel.app/users/instructor/${user._id}`, {
+        fetch(`http://localhost:4000/users/instructor/${user._id}`, {
             method: 'PATCH',
         })
             .then(res => res.json())
@@ -60,6 +60,7 @@ const ManageUsers = () => {
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th></th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
