@@ -10,13 +10,13 @@ const ClassItem = ({ item }) => {
 
   const { data: classes = [], refetch } = useQuery(['classes'], async () => {
 
-    const res = await fetch('http://localhost:4000/classes')
+    const res = await fetch('https://summer-camp-server-side-mahejabinmou.vercel.app/classes')
     return res.json();
   })
 
 
   const handlePending = (user) => {
-    fetch(`http://localhost:4000/classes/pending/${user._id}`, {
+    fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/pending/${user._id}`, {
       method: 'PATCH',
     })
       .then(res => res.json())
@@ -36,7 +36,7 @@ const ClassItem = ({ item }) => {
   }
 
   const handleAproved = (user) => {
-    fetch(`http://localhost:4000/classes/approved/${user._id}`, {
+    fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/approved/${user._id}`, {
       method: 'PATCH',
     })
       .then(res => res.json())
@@ -55,7 +55,7 @@ const ClassItem = ({ item }) => {
       })
   }
   const handleDeny = (user) => {
-    fetch(`http://localhost:4000/classes/denied/${user._id}`, {
+    fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/denied/${user._id}`, {
       method: 'PATCH',
     })
       .then(res => res.json())

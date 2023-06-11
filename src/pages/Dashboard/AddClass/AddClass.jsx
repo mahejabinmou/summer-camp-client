@@ -12,29 +12,29 @@ const AddClass = () => {
             method: 'POST',
             body: formData
         })
-        .then(res => res.json())
-        .then(imgResponse => {
-            if(imgResponse.success){
-                
-                const imgURL = imgResponse.data.display_url;
-                const {name,seats, price,email,instructor} = data;
-                const newClass={name,seats,role:'pending', price: parseFloat(price),email,instructor,image:imgURL}
-               console.log(newClass);
-               fetch('http://localhost:4000/classes',{
-                method:'POST',
-                headers:{
-                    'content-type':'application/json'
-                },
-                body: JSON.stringify(newClass)
-               })
-               
-                
-           
-                
-            }
-        })
+            .then(res => res.json())
+            .then(imgResponse => {
+                if (imgResponse.success) {
+
+                    const imgURL = imgResponse.data.display_url;
+                    const { name, seats, price, email, instructor } = data;
+                    const newClass = { name, seats, role: 'pending', price: parseFloat(price), email, instructor, image: imgURL }
+                    console.log(newClass);
+                    fetch('https://summer-camp-server-side-mahejabinmou.vercel.app/classes', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(newClass)
+                    })
+
+
+
+
+                }
+            })
     };
-    
+
 
 
     return (
@@ -83,12 +83,12 @@ const AddClass = () => {
 
 
                 <div className="form-control w-full my-4">
-                <div className="form-control w-full ml-4">
-                    <label className="label">
-                        <span className="label-text font-semibold">Availabe Seats</span>
-                    </label>
-                    <input type="number" {...register("seats", { required: true })} placeholder="Available Seats" className="input input-bordered w-full " />
-                </div>
+                    <div className="form-control w-full ml-4">
+                        <label className="label">
+                            <span className="label-text font-semibold">Availabe Seats</span>
+                        </label>
+                        <input type="number" {...register("seats", { required: true })} placeholder="Available Seats" className="input input-bordered w-full " />
+                    </div>
                     <label className="label">
                         <span className="label-text">Class Image</span>
                     </label>
