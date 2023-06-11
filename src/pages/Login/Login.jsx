@@ -11,7 +11,7 @@ const Login = () => {
     const navigate=useNavigate();
     const location=useLocation();
     const [showPass,setShowPass]=useState(false);
-    let from = location.state?.from?.pathname || "/";
+    let from= location.state?.from?.pathname || "/";
 
     const handleLogin=event=>{
         event.preventDefault();
@@ -19,10 +19,19 @@ const Login = () => {
         const email=form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
         signIn(email,password)
         .then(result =>{
             const user= result.user;
-            console.log(user);
+            const loggedInUser={email:user.email}
+            console.log(loggedInUser);
+            fetch(`http://localhost:4000/jwt`,{
+                method:'POST',
+                headers:{
+                    'content-type':'application/json'
+                },
+                body: JSON.stringify()
+            })
             Swal.fire({
                 title: 'User Login Successful',
                 showClass: {
@@ -32,7 +41,7 @@ const Login = () => {
                   popup: 'animate__animated animate__fadeOutUp'
                 }
               });
-              navigate(from, {replace:true});
+               navigate(from, {replace:true});
         })
     }
 

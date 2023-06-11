@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Features = () => {
     return (
         <motion.div
-      className="box bg-green-100"
+      className="box bg-green-100 text-black"
       /**
        * Setting the initial keyframe to "null" will use
        * the current value to allow for interruptable keyframes.
