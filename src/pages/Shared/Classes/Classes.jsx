@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SingleClass from "./singleClass";
+import Swal from "sweetalert2";
 
 
 const Classes = () => {
@@ -14,13 +15,14 @@ const Classes = () => {
 
     const handleSelectedClass= (selected) => {
         console.log(selected);
-        
-        if(user && user?.email){
+
+        if(classes.user && classes.user?.email){
             fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/selected`, {
             method: 'POST',
             headers:{
                 'content-type':'application/json',
             },
+            body: JSON.stringify(selected),
         })
             .then(res => res.json())
             .then(data => {
@@ -33,11 +35,22 @@ const Classes = () => {
                         title: `class selected succesfully`,
                         showConfirmButton: false,
                         timer: 1500
-                    })
+                    });
                 }
-            })
+            });
         }
-    }
+        else{
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: `class not selected succesfully`,
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+
+        }
+    
 
     return (
         <div>
@@ -50,6 +63,7 @@ const Classes = () => {
             }
         </div>
     );
-};
+        
+        };
 
 export default Classes;

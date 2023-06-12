@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom/dist";
 import { FcAddDatabase } from 'react-icons/fc';
 import { CgSelect } from 'react-icons/cg';
 import { GrUserAdd } from 'react-icons/gr';
-import { MdBorderColor, MdHome, MdManageAccounts, MdManageHistory } from 'react-icons/md';
+import { MdBorderColor, MdManageAccounts, MdManageHistory } from 'react-icons/md';
 const Dashboard = () => {
 
     // TODO: load data from the server to have dynamic isAdmin
