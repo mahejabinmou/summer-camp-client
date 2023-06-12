@@ -17,6 +17,7 @@ import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 import SendFeedBack from "../pages/Dashboard/SendFeedBack/SendFeedBack";
 import Update from "../pages/Update/Update";
+import Classes from "../pages/Shared/Classes/Classes";
 
 
 
@@ -46,6 +47,12 @@ import Update from "../pages/Update/Update";
             path:'/features',
             element:<Features></Features>       
           },
+          {
+            path:'/allclasses',
+            element:<Classes></Classes>      
+          }
+
+          
           
       ]
     },
