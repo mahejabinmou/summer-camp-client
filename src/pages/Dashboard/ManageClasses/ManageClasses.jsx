@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
 
 
 const ManageClasses = () => {
@@ -82,6 +83,14 @@ const ManageClasses = () => {
 
 
     return (
+        <motion.div
+      className="box bg-green-100 text-black"
+      /**
+       * Setting the initial keyframe to "null" will use
+       * the current value to allow for interruptable keyframes.
+       */
+      whileHover={{ scale: [null, 1.5, 1.4] }}
+      transition={{ duration: 0.3 }}>
 
         <table className="table table-zebra">
             {/* head */}
@@ -138,7 +147,7 @@ const ManageClasses = () => {
 
             </tbody>
         </table>
-
+        </motion.div>
     );
 };
 
