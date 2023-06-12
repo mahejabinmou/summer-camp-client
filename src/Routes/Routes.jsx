@@ -16,6 +16,7 @@ import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 import SendFeedBack from "../pages/Dashboard/SendFeedBack/SendFeedBack";
+import Update from "../pages/Update/Update";
 
 
 
@@ -76,6 +77,11 @@ import SendFeedBack from "../pages/Dashboard/SendFeedBack/SendFeedBack";
             {
                 path:'manageUsers',
                 element:<ManageUsers></ManageUsers>
+            },
+            {
+                 path:'update/:id',
+                 element:<Update></Update>
+                 
             },
             {
               path:'sendfeedback',

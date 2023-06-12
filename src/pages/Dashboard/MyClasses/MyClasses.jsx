@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 
+
 const MyClasses = () => {
     const [classes,setClasses]=useState([]);
     console.log(classes);
@@ -10,6 +11,26 @@ const MyClasses = () => {
           .then(res=>res.json())
           .then(data=>setClasses(data))
     },[])
+
+ const   handleConfirm = id => {
+
+        fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/${id}`,{
+            method:'PATCH',
+            headers:{
+                'content-type' :'application/json'
+            },
+            body:JSON.stringify({status: 'confirm'})
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.modifiedCount>0){
+                    // update
+                    console.log(id);
+                }
+            })
+
+    }
     return (
         
       
@@ -33,7 +54,8 @@ const MyClasses = () => {
                                 <th>{user.enrol}</th>
                                 <td>{user.role}</td>
                                 <td>feedback</td>
-                                <td><button>update</button></td> 
+                                <td><button onClick={()=>handleConfirm(user._id)}
+                                className="bg-green-300 rounded-lg">update</button></td> 
 
                 </tr>)
               }
