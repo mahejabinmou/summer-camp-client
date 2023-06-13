@@ -25,13 +25,7 @@ const Login = () => {
             const user= result.user;
             const loggedInUser={email:user.email}
             console.log(loggedInUser);
-            fetch(`https://summer-camp-server-side-gold.vercel.app/jwt`,{
-                method:'POST',
-                headers:{
-                    'content-type':'application/json'
-                },
-                body: JSON.stringify()
-            })
+            
             Swal.fire({
                 title: 'User Login Successful',
                 showClass: {
@@ -74,8 +68,9 @@ const Login = () => {
           
         </div>
         <div className="form-control mt-6">
-          <input className="btn btn-primary" type="submit" value='Login' />
-        </div>
+         <input className="btn btn-primary" type="submit" value='Login' />
+        
+          </div>
       </form>
       <p><small>New here? <Link to="/signup">Create an account</Link></small></p>
     <SocialLogin></SocialLogin>

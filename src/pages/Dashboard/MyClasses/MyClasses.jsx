@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { motion } from "framer-motion";
 
 
 const MyClasses = () => {
@@ -15,7 +15,14 @@ const MyClasses = () => {
  
     return (
         
-      
+        <motion.div
+        className="box bg-green-100 text-black"
+        /**
+         * Setting the initial keyframe to "null" will use
+         * the current value to allow for interruptable keyframes.
+         */
+        whileHover={{ scale: [null, 1.5, 1.4] }}
+        transition={{ duration: 0.3 }}>
         <table className="table table-zebra">
           {/* head */}
           <thead>
@@ -24,7 +31,7 @@ const MyClasses = () => {
               <th>Total Enrolled Students</th>
               <th>Status</th>
               <th>Feedback </th>
-              <th>Update</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -42,7 +49,7 @@ const MyClasses = () => {
             
           </tbody>
         </table>
-      
+        </motion.div>
     );
 };
 

@@ -9,7 +9,7 @@ import SignUp from "../pages/SignUp/SignUp";
 
 import Features from "../pages/Home/Features/Features";
 import Dashboard from "../Layout/Dashboard";
-import MySelectClasses from "../pages/Dashboard/MySelectClasses/MySelectClasses";
+
 import MyEnrolleClasses from "../pages/Dashboard/MyEnrolleClasses/MyEnrolleClasses";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
@@ -18,6 +18,10 @@ import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 import SendFeedBack from "../pages/Dashboard/SendFeedBack/SendFeedBack";
 import Update from "../pages/Update/Update";
 import Classes from "../pages/Shared/Classes/Classes";
+import Payment from "../pages/Dashboard/Payment/Payment";
+import Instructors from "../pages/Home/Instructors/Instructors";
+import AdminRoute from "./AdminRoute";
+import MySelectedClass from "../pages/Dashboard/MySelectClasses/MySelectedClass";
 
 
 
@@ -50,6 +54,10 @@ import Classes from "../pages/Shared/Classes/Classes";
           {
             path:'/allclasses',
             element:<Classes></Classes>      
+          },
+          {
+            path:'/instructors',
+            element:<Instructors></Instructors>     
           }
 
           
@@ -63,12 +71,20 @@ import Classes from "../pages/Shared/Classes/Classes";
             children:[
                 {
                  path:'myselectclasses',
-                 element: <MySelectClasses></MySelectClasses>  
+                 element: <MySelectedClass></MySelectedClass>  
                 },
                 {
                     path:'myenrolleclasses',
                     element:<MyEnrolleClasses></MyEnrolleClasses>
                 },
+                {
+                  path:'/dashboard/feedback/:id',
+                  element:<SendFeedBack></SendFeedBack>
+                },
+                {
+                  path:'payment',
+                  element:<Payment></Payment>
+              },
             {
                 path:'addclass',
                 element:<AddClass></AddClass>
@@ -79,11 +95,11 @@ import Classes from "../pages/Shared/Classes/Classes";
             },
             {
                 path:'manageclass',
-                element:<ManageClasses></ManageClasses>
+                element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
             },
             {
                 path:'manageUsers',
-                element:<ManageUsers></ManageUsers>
+                element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
             },
             {
                  path:'update/:id',

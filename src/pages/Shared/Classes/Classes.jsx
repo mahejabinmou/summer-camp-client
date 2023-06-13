@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import SingleClass from "./singleClass";
 import Swal from "sweetalert2";
+import axios from "axios";
+import useAuth from "../../../hooks/useAuth";
 
 
 const Classes = () => {
     const [classes,setClasses]=useState([]);
+    const {user}=useAuth();
     console.log(classes);
 
      useEffect(()=>{
@@ -13,51 +16,29 @@ const Classes = () => {
           .then(data=>setClasses(data))
     },[])
 
-    const handleSelectedClass= (selected) => {
-        console.log(selected);
-
-        if(classes.user && classes.user?.email){
-            fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/selected`, {
-            method: 'POST',
-            headers:{
-                'content-type':'application/json',
-            },
-            body: JSON.stringify(selected),
-        })
-            .then(res => res.json())
-            .then(data => {
-                
-                if (data.insertedId) {
-                       refetch();
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: `class selected succesfully`,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                }
-            });
-        }
-        else{
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: `class not selected succesfully`,
-                showConfirmButton: false,
-                timer: 1500
-            });
-        }
-
-        }
+   
+    const handleAddToCart = (data) => {
+  const bookedStudentEmail=user?.email;
+  data.bookedStudentEmail=bookedStudentEmail;
+        axios.post('https://summer-camp-client-side-f6866.web.app/selected',data)
+    .then(res=>{
+        alert("data uploaded");
+        console.log(res);
     
 
+    })
+    console.log(data);
+            
+        
+   
+}
+
     return (
-        <div>
+        <div className="grid md:grid-cols-3">
             {
                 classes.map(item=><SingleClass key={item._id}
                 item={item}
-                handleSelectedClass={handleSelectedClass}>
+                handleAddToCart={handleAddToCart}>
 
                 </SingleClass>)
             }

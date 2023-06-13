@@ -1,13 +1,20 @@
-import { NavLink, Outlet } from "react-router-dom/dist";
-import { FcAddDatabase } from 'react-icons/fc';
-import { CgSelect } from 'react-icons/cg';
-import { GrUserAdd } from 'react-icons/gr';
-import { MdBorderColor, MdManageAccounts, MdManageHistory } from 'react-icons/md';
+import { Outlet } from "react-router-dom/dist";
+// import { FcAddDatabase } from 'react-icons/fc';
+// import { CgSelect } from 'react-icons/cg';
+// import { GrUserAdd } from 'react-icons/gr';
+// import { MdBorderColor, MdManageAccounts, MdManageHistory } from 'react-icons/md';
+import useAdmin from "../hooks/useAdmin";
+import AdminContent from "../pages/Dashboard/ManageUsers/AdminContent";
+import InstructorContent from "../pages/Dashboard/ManageUsers/InstructorContent";
+import StudentContent from "../pages/Dashboard/ManageUsers/StudentContent";
+import useInstructor from "../hooks/useInstructor";
 const Dashboard = () => {
 
     // TODO: load data from the server to have dynamic isAdmin
-    const isAdmin=true;
-    // const isInstructor=false;
+    // const isAdmin=true;
+    const [isAdmin]= useAdmin();
+    const [isInstructor]=useInstructor();
+    
 
 
 
@@ -24,13 +31,26 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-2 w-50 h-full  text-white">
 
-                    {/* {
+                    {
+                        isAdmin ?
+                        (<AdminContent></AdminContent>):
+                         isInstructor ?
+             (  <InstructorContent></InstructorContent>)
+             :
+                            (
+                                <StudentContent></StudentContent>
+                            )
+                    }
+
+               
+
+                    {/* {/* {
                         isAdmin ?
                             <> */}
                                 
-                                <li><NavLink to="/dashboard/manageclass"><MdManageHistory />Manage Classes</NavLink></li>
+                                {/* <li><NavLink to="/dashboard/manageclass"><MdManageHistory />Manage Classes</NavLink></li>
 
-                                <li><NavLink to="/dashboard/manageUsers"><MdManageAccounts />Manage Users</NavLink></li>
+                                <li><NavLink to="/dashboard/manageUsers"><MdManageAccounts />Manage Users</NavLink></li> */}
 
                                 
                             {/* </> :
@@ -38,17 +58,19 @@ const Dashboard = () => {
                                 <> */}
 
                                     
-                                    <li><NavLink to="/dashboard/addclass"><FcAddDatabase /> Add Class</NavLink></li>
-                                    <li><NavLink to="/dashboard/myclass"> <MdBorderColor />My Classes</NavLink></li>
+                                    {/* <li><NavLink to="/dashboard/addclass"><FcAddDatabase /> Add Class</NavLink></li>
+                                    <li><NavLink to="/dashboard/myclass"> <MdBorderColor />My Classes</NavLink></li> */}
                                 {/* </>
                                 : */}
                                 
                                     {/* <> */}
                                         
-                                        <li><NavLink to="/dashboard/myselectclasses">
+                                        {/* <li><NavLink to="/dashboard/myselectclasses">
                                             <CgSelect /> My Select Classes</NavLink></li>
 
                                         <li><NavLink to="/dashboard/myenrolleclasses"> <GrUserAdd />My Enrolled Classes</NavLink></li>
+                                        <li><NavLink to="/dashboard/payment"> <GrUserAdd />My Payment</NavLink></li>  */}
+                                        
                                         {/* </> */}
                                 
 {/* } */}

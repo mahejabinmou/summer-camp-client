@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { motion } from "framer-motion";
+
 
 
 const ManageClasses = () => {
@@ -83,14 +84,7 @@ const ManageClasses = () => {
 
 
     return (
-        <motion.div
-      className="box bg-green-100 text-black"
-      /**
-       * Setting the initial keyframe to "null" will use
-       * the current value to allow for interruptable keyframes.
-       */
-      whileHover={{ scale: [null, 1.5, 1.4] }}
-      transition={{ duration: 0.3 }}>
+        
 
         <table className="table table-zebra">
             {/* head */}
@@ -137,7 +131,7 @@ const ManageClasses = () => {
 
                             } </td>
 
-                        <button className="bg-success rounded p-0 m-2">Send Feedback</button>
+                        <Link to={`/dashboard/feedback/${user._id}`} className="bg-success rounded p-0 m-2">Send Feedback</Link>
 
 
 
@@ -147,7 +141,7 @@ const ManageClasses = () => {
 
             </tbody>
         </table>
-        </motion.div>
+        
     );
 };
 

@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 
 
-const SingleClass = ({ item }) => {
+const SingleClass = ({ item,handleAddToCart }) => {
     const { image, name, instructor, price, available_seats } = item;
   console.log(item);
   
@@ -16,7 +16,7 @@ const SingleClass = ({ item }) => {
                     <p>Available seats: {available_seats}</p>
                     <p>Price: {price}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Select Button</button>
+                        <button onClick={()=>handleAddToCart(item)} className="btn btn-primary">Select Button</button>
                     </div>
                 </div>
             </div>

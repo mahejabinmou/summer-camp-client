@@ -10,24 +10,25 @@ const Navbar = () => {
   const {user,logOut}=useContext(AuthContext);
     const handleLogOut=()=>{
       logOut()
-      .then(()=>{
-
-      })
-      .catch(error=>console.log(error));
+      .then()
+            .catch(error => console.log(error));
     }
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
         <li><Link to="/allclasses">Classes</Link></li>
+        <li><Link to="/signup">SignUp</Link></li>
        
         {
             user? <>
             {/* <span>{user?.displayName}</span> */}
             <span><img className='w-[50px] h-[50px] mx-6 rounded-[50%]' src={user.photoURL} alt="" /> </span>
             <button  onClick={handleLogOut} className="btn btn-active btn-ghost">LogOut</button>
+            <li><Link to='dashboard'>Dashboard</Link></li>
             </> 
             :
-            <><li><Link to="/login">Login</Link></li></>
+            
+            <li><Link to="/login">Login</Link></li>
         }
         
         
