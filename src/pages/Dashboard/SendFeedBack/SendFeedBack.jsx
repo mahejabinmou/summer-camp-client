@@ -12,7 +12,7 @@ const SendFeedBack = () => {
         event.preventDefault();
         const form=event.target.feedBack.value
         console.log(form);
-        axios.put(`https://summer-camp-client-side-f6866.web.app/feedback/${feedbackId?.id}`,{
+        axios.put(`http://localhost:4000/feedback/${feedbackId?.id}`,{
             //  receiveFeedBack
             feedBack:form
         })

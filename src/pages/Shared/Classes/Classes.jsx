@@ -20,7 +20,7 @@ const Classes = () => {
     const handleAddToCart = (data) => {
   const bookedStudentEmail=user?.email;
   data.bookedStudentEmail=bookedStudentEmail;
-        axios.post('https://summer-camp-client-side-f6866.web.app/selected',data)
+        axios.post('http://localhost:4000/selected',data)
     .then(res=>{
         alert("data uploaded");
         console.log(res);
@@ -34,7 +34,7 @@ const Classes = () => {
 }
 
     return (
-        <div className="grid md:grid-cols-3">
+        <div className="grid md:grid-cols-3 gap-4">
             {
                 classes.map(item=><SingleClass key={item._id}
                 item={item}

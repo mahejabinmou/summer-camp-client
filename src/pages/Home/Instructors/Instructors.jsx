@@ -6,7 +6,7 @@ const Instructors = () => {
 
     const [instructors,setInstructors]=useState([])
      useEffect(()=>{
-         fetch('https://summer-camp-client-side-f6866.web.app/instructor')
+         fetch('http://localhost:4000/instructor')
          .then(res=>res.json())
          .then(data=>setInstructors(data))
    },[])

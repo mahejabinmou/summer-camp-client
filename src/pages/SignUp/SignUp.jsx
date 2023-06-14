@@ -40,7 +40,7 @@ const SignUp = () => {
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email,role:'user' };
 
-                        fetch(`https://summer-camp-client-side-f6866.web.app/users`, {
+                        fetch(`http://localhost:4000/users`, {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

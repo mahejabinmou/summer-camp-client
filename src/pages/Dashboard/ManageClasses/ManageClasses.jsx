@@ -15,31 +15,7 @@ const ManageClasses = () => {
             .then(data => setClasses(data))
     }, [])
 
-    // const { data: classes = [], refetch } = useQuery(['classes'], async () => {
-
-    //     const res = await fetch('https://summer-camp-server-side-mahejabinmou.vercel.app/classes')
-    //     return res.json();
-    //   })
-
-    // const handlePending = (user) => {
-    //     fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/pending/${user._id}`, {
-    //         method: 'PATCH',
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //             if (data.modifiedCount) {
-    //                 //   refetch();
-    //                 Swal.fire({
-    //                     position: 'top-end',
-    //                     icon: 'success',
-    //                     title: `${user.name} is pending !`,
-    //                     showConfirmButton: false,
-    //                     timer: 1500
-    //                 })
-    //             }
-    //         })
-    // }
+   
 
     const handleAproved = (user) => {
         fetch(`https://summer-camp-server-side-mahejabinmou.vercel.app/classes/approved/${user._id}`, {
@@ -116,10 +92,7 @@ const ManageClasses = () => {
                         <td>{user.role}</td>
 
                         <td>
-                            {/* {user.role == 'pending' ? 'Pending' :
-                            <button className="bg-green-300 rounded" onClick={() => handlePending(user)}>pending</button>
-
-                        } */}
+                           
 
 
                             {user.role == 'approved' ? 'Approved' :
