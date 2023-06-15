@@ -40,7 +40,7 @@ const SignUp = () => {
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email,role:'user' };
 
-                        fetch(`http://localhost:4000/users`, {
+                        fetch(`https://summer-camp-server-side-three.vercel.app/users`, {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

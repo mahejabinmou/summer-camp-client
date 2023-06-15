@@ -20,7 +20,7 @@ const Classes = () => {
     const handleAddToCart = (data) => {
   const bookedStudentEmail=user?.email;
   data.bookedStudentEmail=bookedStudentEmail;
-        axios.post('http://localhost:4000/selected',data)
+        axios.post('https://summer-camp-server-side-three.vercel.app/selected',data)
     .then(res=>{
         alert("data uploaded");
         console.log(res);

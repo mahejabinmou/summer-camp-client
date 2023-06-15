@@ -12,7 +12,7 @@ const SendFeedBack = () => {
         event.preventDefault();
         const form=event.target.feedBack.value
         console.log(form);
-        axios.put(`http://localhost:4000/feedback/${feedbackId?.id}`,{
+        axios.put(`https://summer-camp-server-side-three.vercel.app/feedback/${feedbackId?.id}`,{
             //  receiveFeedBack
             feedBack:form
         })

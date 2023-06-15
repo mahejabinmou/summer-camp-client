@@ -1,4 +1,4 @@
-import Swal from "sweetalert2";
+
 
 
 const SingleClass = ({ item,handleAddToCart }) => {

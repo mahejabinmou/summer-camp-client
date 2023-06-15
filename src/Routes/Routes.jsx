@@ -74,7 +74,7 @@ import MySelectedClass from "../pages/Dashboard/MySelectClasses/MySelectedClass"
                  element: <MySelectedClass></MySelectedClass>  
                 },
                 {
-                    path:'myenrolleclasses',
+                    path:'enrolledClass',
                     element:<MyEnrolleClasses></MyEnrolleClasses>
                 },
                 {
@@ -85,6 +85,8 @@ import MySelectedClass from "../pages/Dashboard/MySelectClasses/MySelectedClass"
                   path:'/dashboard/payment/:id',
                   element:<Payment></Payment>
               },
+              
+              
             {
                 path:'addclass',
                 element:<AddClass></AddClass>
