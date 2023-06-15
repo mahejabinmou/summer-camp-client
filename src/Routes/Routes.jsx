@@ -82,7 +82,7 @@ import MySelectedClass from "../pages/Dashboard/MySelectClasses/MySelectedClass"
                   element:<SendFeedBack></SendFeedBack>
                 },
                 {
-                  path:'payment',
+                  path:'/dashboard/payment/:id',
                   element:<Payment></Payment>
               },
             {

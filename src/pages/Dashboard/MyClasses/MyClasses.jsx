@@ -42,7 +42,7 @@ const MyClasses = () => {
                    <th>{user.name}</th>
                                 <th>{user.enrol}</th>
                                 <td>{user.role}</td>
-                                <td>feedback</td>
+                                <td>{user.feedBack}</td>
                                      </tr>)
               }
             

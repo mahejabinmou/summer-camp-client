@@ -1,8 +1,10 @@
-import { useContext } from "react";
-import { AuthContext } from "../../../Provider/AuthProvider";
+
 import useAxiosSecure from "../../../hooks/UseAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../hooks/useAuth";
+import { loadStripe } from "@stripe/stripe-js";
+import { FaDollarSign } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const MySelectedClass = () => {
@@ -28,6 +30,7 @@ const MySelectedClass = () => {
                     <th>Class:</th>
                     <th>Instructor Name:</th>
                     <th>Price:</th>
+                    <th>Pay</th>
                    <th>Remove</th>
                 </tr>
             </thead>
@@ -41,7 +44,10 @@ const MySelectedClass = () => {
                         <td>{user.name}</td>
                         <th>{user.instructor}</th>
                         <td>{user.price}</td>
-                        <td></td>
+                        <td>
+                            <Link to={`/dashboard/payment/${user._id}`}  className="btn btn-outline btn-success btn-xs"><FaDollarSign/>Pay</Link>
+                             </td>
+                        <td><button>remove</button></td>
 
 
 
