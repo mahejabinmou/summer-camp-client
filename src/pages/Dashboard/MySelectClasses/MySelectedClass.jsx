@@ -40,7 +40,7 @@ const MySelectedClass = () => {
 
                         <th><img className="w-12 h-12 rounded-full object-cover object-center " src={user.image} alt="" /></th>
                         {/* <th>{user.bookedStudentEmail}</th> */}
-                        <th>{singleClass.image}</th>
+                        <th><img src={singleClass.image} alt="" /></th>
                         <td>{singleClass.name}</td>
                         <th>{singleClass.instructor}</th>
                         <td>{singleClass.price}</td>
