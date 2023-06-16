@@ -25,7 +25,7 @@ const MySelectedClass = () => {
             {/* head */}
             <thead>
                 <tr>
-                    <th>#</th>
+                    {/* <th>#</th> */}
                      <th>Image</th>
                     <th>Class:</th>
                     <th>Instructor Name:</th>
@@ -38,8 +38,7 @@ const MySelectedClass = () => {
                 {
                     selectedClasses.map((singleClass) => <tr key={singleClass._id} >
 
-                        <th><img className="w-12 h-12 rounded-full object-cover object-center " src={user.image} alt="" /></th>
-                        {/* <th>{user.bookedStudentEmail}</th> */}
+                         {/* <th>{user.bookedStudentEmail}</th> */}
                         <th><img src={singleClass.image} alt="" /></th>
                         <td>{singleClass.name}</td>
                         <th>{singleClass.instructor}</th>
