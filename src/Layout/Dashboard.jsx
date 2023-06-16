@@ -42,41 +42,7 @@ const Dashboard = () => {
                             )
                     }
 
-               
-
-                    {/* {/* {
-                        isAdmin ?
-                            <> */}
-                                
-                                {/* <li><NavLink to="/dashboard/manageclass"><MdManageHistory />Manage Classes</NavLink></li>
-
-                                <li><NavLink to="/dashboard/manageUsers"><MdManageAccounts />Manage Users</NavLink></li> */}
-
-                                
-                            {/* </> :
-                             isInstructor ?
-                                <> */}
-
-                                    
-                                    {/* <li><NavLink to="/dashboard/addclass"><FcAddDatabase /> Add Class</NavLink></li>
-                                    <li><NavLink to="/dashboard/myclass"> <MdBorderColor />My Classes</NavLink></li> */}
-                                {/* </>
-                                : */}
-                                
-                                    {/* <> */}
-                                        
-                                        {/* <li><NavLink to="/dashboard/myselectclasses">
-                                            <CgSelect /> My Select Classes</NavLink></li>
-
-                                        <li><NavLink to="/dashboard/myenrolleclasses"> <GrUserAdd />My Enrolled Classes</NavLink></li>
-                                        <li><NavLink to="/dashboard/payment"> <GrUserAdd />My Payment</NavLink></li>  */}
-                                        
-                                        {/* </> */}
-                                
-{/* } */}
-
-
-
+            
 
                 </ul>
 

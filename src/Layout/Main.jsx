@@ -19,9 +19,7 @@ const Main = () => {
             }
 
 
-            {/* <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer> */}
+           
         </div>
     );
 };

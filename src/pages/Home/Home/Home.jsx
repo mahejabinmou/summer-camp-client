@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import Features from "../Features/Features";
 import { MdLightMode } from "react-icons/md";
 import './Home.css'
+import PopularClasses from "../PopularClasses/PopularClasses";
 
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
                <button className="text-green-500" onClick={toggleTheme}><MdLightMode/></button>
             </div>
             <Banner></Banner>
+            <PopularClasses></PopularClasses>
             <Features></Features>
         </div>
     );

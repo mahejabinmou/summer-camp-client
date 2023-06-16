@@ -20,8 +20,8 @@ const CheckoutForm = ({closeModal,singleClass}) => {
     const [processing, setProcessing] = useState(false)
     
     console.log(singleClass);
-
-    console.log(clientSecret);
+   console.log(clientSecret);
+   
     useEffect(()=>{
         if(singleClass?.price && !!localStorage.getItem("access-token")){
             axiosSecure.post("/create-payment-intent", {price: singleClass?.price})

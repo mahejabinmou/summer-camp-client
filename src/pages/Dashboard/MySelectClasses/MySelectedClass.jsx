@@ -47,7 +47,7 @@ const MySelectedClass = () => {
                         <td>
                             <Link to={`/dashboard/payment/${singleClass._id}`}  
                             state={singleClass}
-                            className="btn btn-outline btn-success btn-xs"><FaDollarSign/>Pay</Link>
+                            className="btn btn-outline btn-success btn-xs"><FaDollarSign/>Pay Now</Link>
                              </td>
                         <td><button>remove</button></td>
 

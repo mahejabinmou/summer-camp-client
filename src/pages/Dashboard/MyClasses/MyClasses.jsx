@@ -39,8 +39,8 @@ const MyClasses = () => {
            
               {
                 classes.map(user=><tr key={user._id}>
-                   <th>{user.name}</th>
-                                <th>{user.enrol}</th>
+                            <th>{user.name}</th>
+                                <th>{user.enroll}</th>
                                 <td>{user.role}</td>
                                 <td>{user.feedBack}</td>
                                      </tr>)

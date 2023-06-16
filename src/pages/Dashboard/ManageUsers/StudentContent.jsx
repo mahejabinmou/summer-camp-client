@@ -13,7 +13,7 @@ const StudentContent = () => {
                 <CgSelect /> My Select Classes</NavLink></li>
 
             <li><NavLink to="/dashboard/enrolledClass"> <GrUserAdd />My Enrolled Classes</NavLink></li>
-            <li><NavLink to="/dashboard/payment"><MdPayment></MdPayment>payment</NavLink></li>
+            <li><NavLink to="/dashboard/paymenthistory"><MdPayment></MdPayment>payment</NavLink></li>
             </div>
 
             <div className="divider"></div>
