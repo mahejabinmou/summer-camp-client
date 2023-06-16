@@ -23,6 +23,8 @@ import Instructors from "../pages/Home/Instructors/Instructors";
 import AdminRoute from "./AdminRoute";
 import MySelectedClass from "../pages/Dashboard/MySelectClasses/MySelectedClass";
 import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import InstructorRoute from "./InstructorRoute";
 
 
 
@@ -70,7 +72,7 @@ export const router = createBrowserRouter([
 
   {
     path: 'dashboard',
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path: 'myselectclasses',
@@ -96,11 +98,11 @@ export const router = createBrowserRouter([
 
       {
         path: 'addclass',
-        element: <AddClass></AddClass>
+        element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
       },
       {
         path: 'myclass',
-        element: <MyClasses></MyClasses>
+        element: <InstructorRoute><MyClasses></MyClasses></InstructorRoute>
       },
       {
         path: 'manageclass',
