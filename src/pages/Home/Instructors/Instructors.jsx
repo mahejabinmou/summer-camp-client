@@ -8,7 +8,9 @@ const Instructors = () => {
      useEffect(()=>{
          fetch('https://summer-camp-server-side-three.vercel.app/instructor')
          .then(res=>res.json())
-         .then(data=>setInstructors(data))
+         .then(data=>{
+            console.log(data);
+            setInstructors(data)})
    },[])
 
     return (
@@ -17,7 +19,7 @@ const Instructors = () => {
           <thead>
             <tr>
               <th>#</th>
-              {/* <th>Image</th> */}
+               <th>Image</th>
               <th>Name</th>
               <th>Email</th>
               <th>feedback</th>
@@ -30,7 +32,7 @@ const Instructors = () => {
               {
                 instructors.map(instructor=><tr key={instructor._id}>
                    <th>{instructor.name}</th>
-                                {/* <th>{instructor.image}</th> */}
+                                 <th><img src={instructor.image} alt="" /></th>
                                 <th>{instructor.email}</th>
                                 <td>{instructor.name}</td>
                                 <td>feedback</td>

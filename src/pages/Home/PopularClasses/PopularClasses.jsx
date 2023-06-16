@@ -39,12 +39,12 @@ const PopularClasses = () => {
             {/* head */}
             <thead>
                 <tr>
-                    <th>#</th>
+                    {/* <th>#</th> */}
                      <th>Image</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Available Seats:</th>
-                    <th>Enroll</th>
+                    {/* <th>Enroll</th> */}
                     <th>Price:</th>
 
                 </tr>
@@ -54,12 +54,12 @@ const PopularClasses = () => {
 
                 {
                     popularClasses.map(popularClass => <tr key={popularClass._id}>
-                       <td></td>
+                       {/* <td></td> */}
                         <td><img src={popularClass.image} className="w-12 h-12 rounded-lg" alt="" /></td>
                         <td>{popularClass.name} </td>
                         <td>{popularClass.email}</td>
                         <td>{popularClass.seats}</td>
-                        <td>{popularClass.enroll}</td>
+                        {/* <td>{popularClass.enroll}</td> */}
                         <td>{popularClass.price}</td>
                     </tr>)
                 }
