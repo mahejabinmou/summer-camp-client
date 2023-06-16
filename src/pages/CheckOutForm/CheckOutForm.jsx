@@ -21,7 +21,7 @@ const CheckoutForm = ({closeModal,singleClass}) => {
     
     console.log(singleClass);
    console.log(clientSecret);
-   
+
     useEffect(()=>{
         if(singleClass?.price && !!localStorage.getItem("access-token")){
             axiosSecure.post("/create-payment-intent", {price: singleClass?.price})
@@ -108,7 +108,7 @@ const CheckoutForm = ({closeModal,singleClass}) => {
     }
   }
 }
-
+console.log(singleClass);
 
    
   
@@ -132,14 +132,14 @@ const CheckoutForm = ({closeModal,singleClass}) => {
           }}
           
         />
-         <div className="grid md:grid-cols-2">
-         <button
+         <div className="grid md:grid-cols-1">
+         {/* <button
             type='button'
             className='inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2'
             onClick={closeModal}
           >
             Cancel
-          </button>
+          </button> */}
           <button
             type='submit'
             disabled={!stripe || !clientSecret || processing}
@@ -148,7 +148,7 @@ const CheckoutForm = ({closeModal,singleClass}) => {
             {processing ? (
               <ImSpinner9 className='m-auto animate-spin' size={24} />
             ) : (
-              `Pay $${singleClass.price}`
+              `Pay $ ${singleClass.price}`
             )}
           </button>
          </div>

@@ -4,6 +4,7 @@ import Features from "../Features/Features";
 import { MdLightMode } from "react-icons/md";
 import './Home.css'
 import PopularClasses from "../PopularClasses/PopularClasses";
+import PopularInstructor from "../../../PopularInstructor/PopularInstructor";
 
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
             </div>
             <Banner></Banner>
             <PopularClasses></PopularClasses>
+            <PopularInstructor></PopularInstructor>
             <Features></Features>
         </div>
     );

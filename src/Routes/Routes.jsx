@@ -25,6 +25,7 @@ import MySelectedClass from "../pages/Dashboard/MySelectClasses/MySelectedClass"
 import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import InstructorRoute from "./InstructorRoute";
+import PopularInstructor from "../PopularInstructor/PopularInstructor";
 
 
 
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
       {
         path: '/instructors',
         element: <Instructors></Instructors>
+      },
+      {
+        path: '/popularinstructors',
+        element: <PopularInstructor></PopularInstructor>
       },
       {
         path: '/popularClasses',
