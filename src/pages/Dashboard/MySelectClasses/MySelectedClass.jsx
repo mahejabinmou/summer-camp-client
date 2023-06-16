@@ -39,7 +39,7 @@ const MySelectedClass = () => {
                     selectedClasses.map((singleClass) => <tr key={singleClass._id} >
 
                          {/* <th>{user.bookedStudentEmail}</th> */}
-                        <th><img src={singleClass.image} alt="" /></th>
+                        <th><img className="w-12 h-12" src={singleClass.image} alt="" /></th>
                         <td>{singleClass.name}</td>
                         <th>{singleClass.instructor}</th>
                         <td>{singleClass.price}</td>
