@@ -1,6 +1,6 @@
 
 
-const SinglePopular = ({pClass}) => {
+const SinglePopular = ({Class}) => {
     const {image,name,instructor,available_seats,price,email}=pClass;
     console.log(pClass);
     return (

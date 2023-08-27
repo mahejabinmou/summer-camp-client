@@ -28,7 +28,7 @@ const Navbar = () => {
             </> 
             :
             
-            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/login">LogIn</Link></li>
         }
         
         
@@ -37,7 +37,7 @@ const Navbar = () => {
     </>
     return (
         <>
-            <div className="navbar  z-10 bg-opacity-30 max-w-screen-xl bg-green-200 font-bold ">
+            <div className="navbar  z-10 bg-opacity-30 max-w-screen-xl bg-green-300 font-bold ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
